@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="element"
+            type="com.mlhysrszn.periodictable.model.Element" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        backgroundColor="@{element.backgroundColor}"
+        android:layout_width="64dp"
+        android:layout_height="match_parent"
+        android:layout_margin="2dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtNumber"
+                text="@{element.number}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:textColor="@{element.textColor}"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/txtSymbol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="-12dp"
+                android:text="@{element.symbol}"
+                android:textColor="@{element.textColor}"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="H" />
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|bottom"
+                android:layout_marginTop="-4dp"
+                android:text="@{element.name}"
+                android:textColor="@{element.textColor}"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                tools:text="Hydrogen" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

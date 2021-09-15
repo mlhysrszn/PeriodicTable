@@ -2,9 +2,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/light_gray"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
@@ -12,7 +13,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize">
+            android:minHeight="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -28,18 +32,153 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginEnd="8dp"
-                android:contentDescription="@string/search_button"
+                android:contentDescription="@string/search_icon"
                 android:src="@drawable/ic_search" />
 
         </androidx.appcompat.widget.Toolbar>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvPeriodicTable"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="10" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv1"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:spanCount="11" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tv0"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            android:gravity="center"
+            android:textColor="@color/number_text"
+            app:layout_constraintBottom_toTopOf="@id/tv1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            android:gravity="center"
+            android:text="@string/number_1"
+            android:textColor="@color/number_text"
+            app:layout_constraintBottom_toTopOf="@id/tv2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv0" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            android:gravity="center"
+            android:text="@string/number_2"
+            android:textColor="@color/number_text"
+            app:layout_constraintBottom_toTopOf="@id/tv3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            android:gravity="center"
+            android:text="@string/number_3"
+            android:textColor="@color/number_text"
+            app:layout_constraintBottom_toTopOf="@id/tv4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv2" />
+
+        <TextView
+            android:id="@+id/tv4"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            android:gravity="center"
+            android:text="@string/number_4"
+            android:textColor="@color/number_text"
+            app:layout_constraintBottom_toTopOf="@id/tv5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv3" />
+
+        <TextView
+            android:id="@+id/tv5"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            android:gravity="center"
+            android:text="@string/number_5"
+            android:textColor="@color/number_text"
+            app:layout_constraintBottom_toTopOf="@id/tv6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv4" />
+
+        <TextView
+            android:id="@+id/tv6"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            android:gravity="center"
+            android:text="@string/number_6"
+            android:textColor="@color/number_text"
+            app:layout_constraintBottom_toTopOf="@id/tv7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv5" />
+
+        <TextView
+            android:id="@+id/tv7"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            android:gravity="center"
+            android:text="@string/number_7"
+            android:textColor="@color/number_text"
+            app:layout_constraintBottom_toTopOf="@id/tvEmpty"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv6" />
+
+        <TextView
+            android:id="@+id/tvEmpty"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            android:gravity="center"
+            android:textColor="@color/number_text"
+            app:layout_constraintBottom_toTopOf="@id/tv8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv7" />
+
+
+        <TextView
+            android:id="@+id/tv8"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            android:gravity="center"
+            android:text="@string/number_8"
+            android:textColor="@color/number_text"
+            app:layout_constraintBottom_toTopOf="@id/tv9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEmpty" />
+
+        <TextView
+            android:id="@+id/tv9"
+            android:layout_width="24dp"
+            android:layout_height="0dp"
+            android:background="@color/dark_gray"
+            android:gravity="center"
+            android:text="@string/number_9"
+            android:textColor="@color/number_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

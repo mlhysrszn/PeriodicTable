@@ -10,5 +10,10 @@
 
     <color name="gray">#252525</color>
     <color name="light_gray">#333333</color>
+    <color name="dark_gray">#1C1C1C</color>
     <color name="off_white">#F2F2F2</color>
+
+    <color name="number_text">#78909C</color>
+
+    <drawable name="bg_nonmetal_color">#C88447</drawable>
 </resources>
