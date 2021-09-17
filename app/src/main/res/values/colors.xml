@@ -8,12 +8,24 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="gray">#252525</color>
+    <color name="gray">#2C3039</color>
     <color name="light_gray">#333333</color>
     <color name="dark_gray">#1C1C1C</color>
     <color name="off_white">#F2F2F2</color>
 
     <color name="number_text">#78909C</color>
 
-    <drawable name="bg_nonmetal_color">#C88447</drawable>
+    <color name="bg_toolbar">#31353F</color>
+    <color name="bg_color">#20242B</color>
+    <color name="bg_number">#1C2025</color>
+    <color name="bg_nonmetal">#2A3248</color>
+    <color name="bg_alkali_metal">#382B2F</color>
+    <color name="bg_alkaline_earth_metal">#362E31</color>
+    <color name="bg_transition_metal">#2A3039</color>
+    <color name="bg_post_transition_metal">#224039</color>
+    <color name="bg_metalloid">#223A48</color>
+    <color name="bg_halogen">#0D2945</color>
+    <color name="bg_noble_gas">#2B2B46</color>
+    <color name="bg_lanthanide">#2C2E32</color>
+    <color name="bg_actinide">#322B2E</color>
 </resources>

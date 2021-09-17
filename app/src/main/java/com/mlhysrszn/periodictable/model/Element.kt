@@ -6,7 +6,7 @@ data class Element(
     val name: String? = null,
     val weight: Float? = null,
     val backgroundColor: Int? = null,
-    val textColor: Int? = null,
+    val textColor: String? = null,
     val image: String? = null,
     val isClickable: Boolean? = null
 )

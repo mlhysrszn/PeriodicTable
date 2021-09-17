@@ -9,17 +9,23 @@ import com.mlhysrszn.periodictable.model.Number
 
 abstract class BaseViewHolder<T>(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
-    abstract fun bind(item: T)
+    abstract fun bind(item: T, elementOnClick: ElementAdapter.ElementOnClickListener)
 }
 
-class NumberViewHolder(private val binding: NumberItemBinding) : BaseViewHolder<Number>(binding.root) {
-    override fun bind(item: Number) {
+class NumberViewHolder(private val binding: NumberItemBinding) :
+    BaseViewHolder<Number>(binding.root) {
+    override fun bind(item: Number, elementOnClick: ElementAdapter.ElementOnClickListener) {
         binding.number = item.number.toString()
     }
 }
 
-class ElementViewHolder(private val binding: ElementItemBinding) : BaseViewHolder<Element>(binding.root) {
-    override fun bind(item: Element) {
+class ElementViewHolder(private val binding: ElementItemBinding) :
+    BaseViewHolder<Element>(binding.root) {
+    override fun bind(item: Element, elementOnClick: ElementAdapter.ElementOnClickListener) {
         binding.element = item
+
+        binding.root.setOnClickListener {
+            elementOnClick.onClick(item)
+        }
     }
 }

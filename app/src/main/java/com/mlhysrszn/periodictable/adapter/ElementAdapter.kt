@@ -8,7 +8,10 @@ import com.mlhysrszn.periodictable.databinding.NumberItemBinding
 import com.mlhysrszn.periodictable.model.Element
 import com.mlhysrszn.periodictable.model.Number
 
-class ElementAdapter(private val itemList: List<Any>) : RecyclerView.Adapter<BaseViewHolder<*>>() {
+class ElementAdapter(
+    private val itemList: List<Any>,
+    private val elementOnClickListener: ElementOnClickListener
+) : RecyclerView.Adapter<BaseViewHolder<*>>() {
 
     companion object {
         private const val TYPE_NUMBER = 0
@@ -35,8 +38,8 @@ class ElementAdapter(private val itemList: List<Any>) : RecyclerView.Adapter<Bas
         val item = itemList[position]
 
         when (holder) {
-            is NumberViewHolder -> holder.bind(item as Number)
-            is ElementViewHolder -> holder.bind(item as Element)
+            is NumberViewHolder -> holder.bind(item as Number, elementOnClickListener)
+            is ElementViewHolder -> holder.bind(item as Element, elementOnClickListener)
             else -> throw IllegalArgumentException("Invalid type of ViewHolder")
         }
     }
@@ -51,5 +54,9 @@ class ElementAdapter(private val itemList: List<Any>) : RecyclerView.Adapter<Bas
             is Element -> TYPE_ELEMENT
             else -> throw IllegalArgumentException("Invalid type of data $position")
         }
+    }
+
+    interface ElementOnClickListener {
+        fun onClick(element: Element)
     }
 }
