@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), ElementAdapter.ElementOnClickListener 
 
     override fun onClick(element: Element) {
         val binding: DialogElementBinding = DialogElementBinding.inflate(LayoutInflater.from(applicationContext))
-        val alertDialogBuilder = AlertDialog.Builder(this)
+        val alertDialogBuilder = AlertDialog.Builder(this,R.style.ElementDialog)
         binding.element = element
         alertDialogBuilder.setView(binding.root)
         alertDialogBuilder.show()
