@@ -12,6 +12,7 @@
     </data>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/CardElement"
         backgroundColor="@{element.backgroundColor}"
         android:layout_width="64dp"
         android:layout_height="match_parent"
@@ -21,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:background="@color/bg_color"
             android:weightSum="3">
 
             <TextView

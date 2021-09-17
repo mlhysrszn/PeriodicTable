@@ -11,4 +11,6 @@
     <string name="number_7">7</string>
     <string name="number_8">8</string>
     <string name="number_9">9</string>
+    <string name="element_image">Element Image</string>
+    <string name="atomic_weight">Atomic Weight: %s</string>
 </resources>

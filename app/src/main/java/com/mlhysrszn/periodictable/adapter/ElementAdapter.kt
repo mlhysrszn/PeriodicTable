@@ -2,7 +2,9 @@ package com.mlhysrszn.periodictable.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
+import com.mlhysrszn.periodictable.R
 import com.mlhysrszn.periodictable.databinding.ElementItemBinding
 import com.mlhysrszn.periodictable.databinding.NumberItemBinding
 import com.mlhysrszn.periodictable.model.Element
@@ -38,8 +40,14 @@ class ElementAdapter(
         val item = itemList[position]
 
         when (holder) {
-            is NumberViewHolder -> holder.bind(item as Number, elementOnClickListener)
-            is ElementViewHolder -> holder.bind(item as Element, elementOnClickListener)
+            is NumberViewHolder -> {
+                holder.bind(item as Number, elementOnClickListener)
+            }
+            is ElementViewHolder -> {
+                holder.bind(item as Element, elementOnClickListener)
+                holder.itemView.animation =
+                    AnimationUtils.loadAnimation(holder.itemView.context, R.anim.anim_rv)
+            }
             else -> throw IllegalArgumentException("Invalid type of ViewHolder")
         }
     }

@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.databinding.BindingAdapter
+import com.mlhysrszn.periodictable.R
 
 @BindingAdapter("backgroundColor")
 fun CardView.setBackground(color: Int?) {
@@ -20,5 +21,18 @@ fun setText(view: TextView, text: Int?) {
         view.text = ""
     } else {
         view.text = text.toString()
+    }
+}
+
+@BindingAdapter("textWeight")
+fun TextView.setTextWeight(value: Float?) {
+    val string = value.toString()
+    text = resources.getString(R.string.atomic_weight, string)
+}
+
+@BindingAdapter("dialogBackground")
+fun View.setBackgroundColor(color: Int?) {
+    if (color != null) {
+        setBackgroundResource(color)
     }
 }
