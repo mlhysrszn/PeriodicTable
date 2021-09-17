@@ -11,17 +11,10 @@
             type="com.mlhysrszn.periodictable.model.Element" />
     </data>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/CardElement"
-        backgroundColor="@{element.backgroundColor}"
-        android:layout_width="64dp"
-        android:layout_height="match_parent"
-        android:layout_margin="2dp">
-
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="64dp"
             android:layout_height="match_parent"
-            android:background="@color/bg_color"
+            backgroundColor="@{element.backgroundColor}"
             android:orientation="vertical"
             android:weightSum="3">
 
@@ -68,7 +61,4 @@
                 android:textStyle="bold"
                 tools:text="Hydrogen" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-
 </layout>

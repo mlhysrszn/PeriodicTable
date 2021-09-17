@@ -7,7 +7,7 @@ import androidx.databinding.BindingAdapter
 import com.mlhysrszn.periodictable.R
 
 @BindingAdapter("backgroundColor")
-fun CardView.setBackground(color: Int?) {
+fun View.setBackground(color: Int?) {
     if (color == null) {
         visibility = View.INVISIBLE
     } else {
